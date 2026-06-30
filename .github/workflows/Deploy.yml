@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Publish Static Site
 
 on:
   push:
     branches:
-      - main
+      - changes
   workflow_dispatch:
 
 permissions:
@@ -25,31 +25,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-
-      - name: Install dependencies
-        working-directory: site
-        run: npm ci
-
-      - name: Build
-        working-directory: site
-        env:
-          VITE_BASE_PATH: /softwaredesign.io-3-dark/
-        run: npm run build
-
-      - name: Configure SPA fallback
-        working-directory: site
-        run: cp dist/index.html dist/404.html
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp index.html 404.html favicon.svg .nojekyll _site/
+          cp -r assets logos _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/dist
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
