@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           cache-dependency-path: site/package-lock.json
 
@@ -39,7 +39,7 @@ jobs:
       - name: Build
         working-directory: site
         env:
-          VITE_BASE_PATH: /softwaredesign.io-3-dark/
+          VITE_BASE_PATH: /softwaredesign.io-3-dark1/
         run: npm run build
 
       - name: Configure SPA fallback
