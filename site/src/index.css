@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    @apply bg-void font-body text-ink overflow-x-hidden;
+    cursor: none;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      cursor: auto;
+    }
+  }
+
+  ::selection {
+    @apply bg-neon-magenta/30 text-ink;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-abyss;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon-cyan/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neon-cyan/50;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .neon-border {
+    @apply border border-neon-cyan/20 hover:border-neon-cyan/50 transition-colors duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-gold bg-clip-text text-transparent;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(
+      90deg,
+      #00f0ff,
+      #ff006e,
+      #ffb800,
+      #00f0ff
+    );
+    background-size: 300% 100%;
+    @apply bg-clip-text text-transparent animate-shimmer;
+  }
+
+  .section-padding {
+    @apply px-5 sm:px-8 lg:px-16 xl:px-24;
+  }
+
+  .bento-card {
+    @apply glass-panel rounded-2xl p-6 transition-all duration-500;
+  }
+
+  .bento-card:hover {
+    @apply border-neon-cyan/30 shadow-neonSm -translate-y-1;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-neon-cyan to-neon-magenta px-7 py-3.5 font-display font-semibold text-void transition-all duration-300 hover:shadow-neon hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-7 py-3.5 font-display font-medium text-ink transition-all duration-300 hover:border-neon-cyan/40 hover:bg-white/[0.04];
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.25em] text-neon-cyan;
+  }
+
+  .heading-xl {
+    @apply font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight;
+  }
+
+  .heading-lg {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight;
+  }
+
+  .heading-md {
+    @apply font-display text-2xl sm:text-3xl font-bold leading-tight;
+  }
+}
+
+@layer utilities {
+  .aurora-bg {
+    background: radial-gradient(
+        ellipse 80% 50% at 20% 40%,
+        rgba(0, 240, 255, 0.15),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 80% 20%,
+        rgba(255, 0, 110, 0.12),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 50% 50% at 50% 80%,
+        rgba(255, 184, 0, 0.08),
+        transparent 50%
+      );
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
