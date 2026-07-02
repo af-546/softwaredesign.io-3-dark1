@@ -18,7 +18,7 @@ export function ScrollProgress() {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] h-[2px] bg-white/5">
       <motion.div
-        className="h-full bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-gold origin-left"
+        className="h-full bg-brand-light origin-left"
         style={{ scaleX: progress }}
       />
     </div>

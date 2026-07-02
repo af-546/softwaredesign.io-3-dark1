@@ -12,7 +12,7 @@ export function CapabilitiesMarquee() {
               className="font-display text-lg sm:text-xl font-semibold text-ink-muted/40 whitespace-nowrap flex items-center gap-8"
             >
               {cap}
-              <span className="text-neon-cyan">✦</span>
+              <span className="text-brand-light">✦</span>
             </span>
           ))}
         </div>

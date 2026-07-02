@@ -22,7 +22,7 @@ export function BlogPreview() {
               className="bento-card block h-full group"
               data-cursor="pointer"
             >
-              <span className="font-mono text-[10px] text-neon-magenta uppercase">{post.category}</span>
+              <span className="font-mono text-[10px] text-brand-light uppercase">{post.category}</span>
               <h3 className="font-display font-semibold mt-3 group-hover:text-gradient transition-all line-clamp-2">
                 {post.title}
               </h3>

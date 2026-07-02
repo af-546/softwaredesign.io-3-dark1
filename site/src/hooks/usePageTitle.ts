@@ -4,7 +4,7 @@ export function usePageTitle(title: string, description?: string) {
   useEffect(() => {
     document.title = title.includes("SoftwareDesign")
       ? title
-      : `${title} — SoftwareDesign.io`;
+      : `${title} | SoftwareDesign.io`;
 
     if (description) {
       let meta = document.querySelector('meta[name="description"]');

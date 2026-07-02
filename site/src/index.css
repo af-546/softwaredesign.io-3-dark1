@@ -18,17 +18,16 @@
 
   body {
     @apply bg-void font-body text-ink overflow-x-hidden;
-    cursor: none;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 769px) {
     body {
-      cursor: auto;
+      cursor: none;
     }
   }
 
   ::selection {
-    @apply bg-neon-magenta/30 text-ink;
+    @apply bg-brand/30 text-ink;
   }
 
   ::-webkit-scrollbar {
@@ -41,11 +40,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-neon-cyan/30 rounded-full;
+    @apply bg-brand-light/30 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-neon-cyan/50;
+    @apply bg-brand-light/50;
   }
 }
 
@@ -55,21 +54,15 @@
   }
 
   .neon-border {
-    @apply border border-neon-cyan/20 hover:border-neon-cyan/50 transition-colors duration-300;
+    @apply border border-brand-light/20 hover:border-brand-light/50 transition-colors duration-300;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-light to-brand bg-clip-text text-transparent;
   }
 
   .text-gradient-animated {
-    background: linear-gradient(
-      90deg,
-      #00f0ff,
-      #ff006e,
-      #ffb800,
-      #00f0ff
-    );
+    background: linear-gradient(90deg, #3b82f6, #2563eb, #1d4ed8, #3b82f6);
     background-size: 300% 100%;
     @apply bg-clip-text text-transparent animate-shimmer;
   }
@@ -78,28 +71,54 @@
     @apply px-5 sm:px-8 lg:px-16 xl:px-24;
   }
 
+  .section-container {
+    @apply w-full max-w-7xl mx-auto;
+  }
+
   .bento-card {
     @apply glass-panel rounded-2xl p-6 transition-all duration-500;
   }
 
   .bento-card:hover {
-    @apply border-neon-cyan/30 shadow-neonSm -translate-y-1;
+    @apply border-brand-light/30 shadow-neonSm -translate-y-1;
+  }
+
+  .mockup-shell {
+    @apply relative overflow-hidden rounded-xl border border-white/10 bg-[#0a1020];
+  }
+
+  .mockup-shell::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-brand-dark/10 pointer-events-none;
+  }
+
+  .mockup-shell svg {
+    @apply relative z-[1] w-full h-full;
+    filter: saturate(0.9) brightness(0.9) contrast(1.05);
+  }
+
+  .hero-mockups .mockup-shell svg {
+    filter: saturate(0.95) brightness(0.92) contrast(1.02);
+  }
+
+  .section-band {
+    @apply bg-abyss/40 border-y border-white/5;
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-neon-cyan to-neon-magenta px-7 py-3.5 font-display font-semibold text-void transition-all duration-300 hover:shadow-neon hover:scale-[1.02] active:scale-[0.98];
+    @apply relative inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-display font-semibold text-white transition-all duration-300 hover:bg-brand-light hover:shadow-neonSm active:scale-[0.98];
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-7 py-3.5 font-display font-medium text-ink transition-all duration-300 hover:border-neon-cyan/40 hover:bg-white/[0.04];
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-7 py-3.5 font-display font-medium text-ink transition-all duration-300 hover:border-brand-light/40 hover:bg-white/[0.04];
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.25em] text-neon-cyan;
+    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-brand-light;
   }
 
   .heading-xl {
-    @apply font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight;
+    @apply font-display text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold leading-[1.05] tracking-tight;
   }
 
   .heading-lg {
@@ -115,32 +134,32 @@
   .aurora-bg {
     background: radial-gradient(
         ellipse 80% 50% at 20% 40%,
-        rgba(0, 240, 255, 0.15),
+        rgba(37, 99, 235, 0.12),
         transparent 50%
       ),
       radial-gradient(
         ellipse 60% 40% at 80% 20%,
-        rgba(255, 0, 110, 0.12),
+        rgba(59, 130, 246, 0.08),
         transparent 50%
       ),
       radial-gradient(
         ellipse 50% 50% at 50% 80%,
-        rgba(255, 184, 0, 0.08),
+        rgba(29, 78, 216, 0.06),
         transparent 50%
       );
   }
 
   .noise-overlay {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
   }
 
   .grid-bg {
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.03) 1px,
+        rgba(255, 255, 255, 0.025) 1px,
         transparent 1px
       ),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 

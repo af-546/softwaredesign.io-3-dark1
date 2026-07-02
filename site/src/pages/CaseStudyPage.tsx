@@ -16,18 +16,18 @@ export function CaseStudyPage() {
   return (
     <article className="section-padding pt-32 pb-20 max-w-4xl mx-auto">
       <Reveal>
-        <Link to="/work" className="text-sm text-neon-cyan hover:underline mb-8 inline-block" data-cursor="pointer">
+        <Link to="/work" className="text-sm text-brand-light hover:underline mb-8 inline-block" data-cursor="pointer">
           ← Back to work
         </Link>
         <div className="flex flex-wrap gap-2 mb-6">
           {study.services.map((s) => (
-            <span key={s} className="font-mono text-[10px] uppercase px-3 py-1 rounded-full bg-neon-cyan/10 text-neon-cyan">
+            <span key={s} className="font-mono text-[10px] uppercase px-3 py-1 rounded-full bg-brand/10 text-brand-light">
               {s}
             </span>
           ))}
         </div>
         <h1 className="heading-xl mb-4">{study.client}</h1>
-        <p className="text-xl text-neon-gold font-display font-semibold mb-8">{study.outcome}</p>
+        <p className="text-xl text-brand-light font-display font-semibold mb-8">{study.outcome}</p>
         <div className="grid sm:grid-cols-3 gap-4 mb-12">
           {[
             { label: "Industry", value: study.industry },

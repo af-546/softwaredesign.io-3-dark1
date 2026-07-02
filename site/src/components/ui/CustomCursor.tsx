@@ -34,26 +34,39 @@ export function CustomCursor() {
   return (
     <>
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden md:block mix-blend-difference"
+        className="pointer-events-none fixed top-0 left-0 z-[9996] hidden md:block"
+        animate={{ x: pos.x - 80, y: pos.y - 80 }}
+        transition={{ type: "spring", stiffness: 120, damping: 22, mass: 0.6 }}
+      >
+        <div
+          className={`w-40 h-40 rounded-full blur-3xl transition-all duration-300 ${
+            hovering ? "bg-brand/25 scale-125" : "bg-brand/10 scale-100"
+          }`}
+        />
+      </motion.div>
+
+      <motion.div
+        className="pointer-events-none fixed top-0 left-0 z-[9998] hidden md:block"
         animate={{ x: pos.x - 6, y: pos.y - 6 }}
         transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
       >
         <div
           className={`w-3 h-3 rounded-full border-2 transition-all duration-200 ${
             hovering
-              ? "border-neon-cyan scale-[2.5] bg-neon-cyan/20"
-              : "border-white bg-transparent"
+              ? "border-brand-light scale-[2] bg-brand-light/30"
+              : "border-white/80 bg-transparent"
           }`}
         />
       </motion.div>
+
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9997] hidden md:block"
-        animate={{ x: pos.x - 20, y: pos.y - 20 }}
+        animate={{ x: pos.x - 18, y: pos.y - 18 }}
         transition={{ type: "spring", stiffness: 150, damping: 20, mass: 0.8 }}
       >
         <div
-          className={`w-10 h-10 rounded-full border transition-all duration-300 ${
-            hovering ? "border-neon-magenta/50 scale-150" : "border-white/10"
+          className={`w-9 h-9 rounded-full border transition-all duration-300 ${
+            hovering ? "border-brand-light/60 scale-150" : "border-white/15"
           }`}
         />
       </motion.div>

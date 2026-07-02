@@ -5,15 +5,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        void: "#020208",
-        abyss: "#060612",
-        slate: "#0c0c1a",
+        void: "#0c1222",
+        abyss: "#111827",
+        slate: "#1a2332",
         glass: "rgba(255,255,255,0.04)",
+        brand: {
+          DEFAULT: "#2563eb",
+          light: "#3b82f6",
+          dark: "#1d4ed8",
+          subtle: "#60a5fa",
+        },
         neon: {
-          cyan: "#00f0ff",
-          magenta: "#ff006e",
-          gold: "#ffb800",
-          lime: "#39ff14",
+          cyan: "#3b82f6",
+          magenta: "#2563eb",
+          gold: "#1d4ed8",
+          lime: "#60a5fa",
         },
         ink: {
           DEFAULT: "#f8fafc",
@@ -22,9 +28,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Syne"', "system-ui", "sans-serif"],
-        body: ['"DM Sans"', "system-ui", "sans-serif"],
-        mono: ['"JetBrains Mono"', "monospace"],
+        display: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+        body: ['"Inter"', "system-ui", "sans-serif"],
+        mono: ['"IBM Plex Mono"', "monospace"],
       },
       animation: {
         aurora: "aurora 12s ease-in-out infinite",
@@ -60,8 +66,8 @@ export default {
         xs: "2px",
       },
       boxShadow: {
-        neon: "0 0 20px rgba(0, 240, 255, 0.3), 0 0 60px rgba(255, 0, 110, 0.15)",
-        neonSm: "0 0 12px rgba(0, 240, 255, 0.25)",
+        neon: "0 0 20px rgba(37, 99, 235, 0.25), 0 0 60px rgba(37, 99, 235, 0.1)",
+        neonSm: "0 0 12px rgba(59, 130, 246, 0.2)",
         glass: "0 8px 32px rgba(0, 0, 0, 0.4)",
       },
     },

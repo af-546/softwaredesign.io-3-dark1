@@ -10,7 +10,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { SearchOverlay } from "@/components/ui/SearchOverlay";
 import { CookieConsent } from "@/components/ui/CookieConsent";
-import { ChatWidget } from "@/components/ui/ChatWidget";
+import { ContactFAB } from "@/components/ui/ContactFAB";
 import { ToastContainer } from "@/components/ui/ToastContainer";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { BookingModal } from "@/components/ui/BookingModal";
@@ -51,7 +51,7 @@ export function Layout() {
           <CommandPalette />
           <SearchOverlay />
           <CookieConsent />
-          <ChatWidget />
+          <ContactFAB />
           <ToastContainer />
           <Lightbox />
           <BookingModal />

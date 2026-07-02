@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
-import { useApp } from "@/context/AppContext";
+import { MagneticButton, MagneticLink } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { useApp } from "@/context/AppContext";
 
 export function ContactCTA() {
   const { setBookingOpen } = useApp();
 
   return (
-    <section className="section-padding py-24">
+    <section className="section-padding py-20 md:py-28">
       <Reveal>
-        <div className="max-w-5xl mx-auto glass-panel rounded-3xl p-12 sm:p-16 text-center relative overflow-hidden">
-          <div className="absolute inset-0 aurora-bg opacity-50" />
+        <div className="section-container glass-panel rounded-2xl p-10 sm:p-14 md:p-16 text-center relative overflow-hidden border-brand/10">
+          <div className="absolute inset-0 aurora-bg opacity-40" />
           <div className="relative z-10">
             <p className="eyebrow mb-4">Ready to ship?</p>
             <h2 className="heading-lg mb-6">Let's build something remarkable</h2>
@@ -21,9 +20,9 @@ export function ContactCTA() {
               <MagneticButton className="btn-primary" onClick={() => setBookingOpen(true)}>
                 Book a call
               </MagneticButton>
-              <Link to="/contact" className="btn-ghost" data-cursor="pointer">
-                Send a message
-              </Link>
+              <MagneticLink to="/contact" className="btn-ghost">
+                Contact us
+              </MagneticLink>
             </div>
           </div>
         </div>

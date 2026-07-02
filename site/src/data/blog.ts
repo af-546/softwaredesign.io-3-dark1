@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     slug: "why-weekly-demos-change-everything",
     title: "Why weekly demos change everything",
     excerpt:
-      "The biggest risk in design projects isn't bad design — it's surprise at handoff. Weekly demos eliminate that.",
+      "The biggest risk in design projects isn't bad design. It's surprise at handoff. Weekly demos eliminate that.",
     category: "Process",
     date: "2025-11-12",
     readTime: "6 min",
@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["process", "collaboration", "demos"],
     content: [
       "Most design agencies operate on a waterfall model disguised as agile. You get a kickoff deck, then silence for three weeks, then a big reveal.",
-      "We ship work every Friday. Not polished presentations — actual working prototypes or production code. Your team sees progress as it happens and can redirect early.",
+      "We ship work every Friday. Not polished presentations, but actual working prototypes or production code. Your team sees progress as it happens and can redirect early.",
       "The result: fewer change orders, faster timelines, and stakeholders who actually understand what they're getting before launch day.",
       "If your current agency can't show you something tangible every week, that's a red flag worth paying attention to.",
     ],
@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
     author: "SoftwareDesign Team",
     tags: ["saas", "onboarding", "conversion"],
     content: [
-      "The average SaaS product loses 40% of signups before first value. That's not a marketing problem — it's an onboarding design problem.",
+      "Many SaaS products lose signups before first value. That is often an onboarding design problem, not a marketing one.",
       "We start every onboarding redesign by mapping the shortest path to a meaningful outcome. Not feature tours. Not empty dashboards. Real work completed.",
       "Progressive disclosure beats information dumps. Show users exactly what they need for step one, then reveal complexity as they earn it.",
       "Measure time-to-first-workflow, not time-on-page. The metrics that matter are behavioral, not vanity.",

@@ -13,7 +13,7 @@ export function ServicesPage() {
         <p className="eyebrow mb-4">Services</p>
         <h1 className="heading-xl mb-6">Everything you need to ship</h1>
         <p className="text-xl text-ink-soft max-w-2xl">
-          Six service lines. One standard of craft. Pick what you need — or engage us end-to-end.
+          Six service lines. One standard of craft. Pick what you need or engage us end to end.
         </p>
       </Reveal>
 
@@ -25,12 +25,14 @@ export function ServicesPage() {
               className="bento-card block group h-full"
               data-cursor="pointer"
             >
-              <span className="font-mono text-neon-cyan text-sm">0{i + 1}</span>
+              <span className="font-mono text-brand-light text-sm uppercase tracking-wider">
+                {service.shortTitle}
+              </span>
               <h2 className="font-display text-2xl font-bold mt-3 group-hover:text-gradient transition-all">
                 {service.title}
               </h2>
               <p className="text-ink-soft mt-3 leading-relaxed">{service.description}</p>
-              <span className="inline-block mt-6 text-neon-cyan text-sm">Learn more →</span>
+              <span className="inline-block mt-6 text-brand-light text-sm">Learn more →</span>
             </Link>
           </Reveal>
         ))}

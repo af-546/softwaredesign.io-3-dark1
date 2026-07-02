@@ -23,7 +23,7 @@ export function ContactPage() {
         <p className="eyebrow mb-4">Contact</p>
         <h1 className="heading-xl mb-6">Start a conversation</h1>
         <p className="text-ink-soft text-lg mb-10 leading-relaxed">
-          Tell us about your project. We reply within one business day — usually faster.
+          Tell us about your project. We reply within one business day, usually faster.
         </p>
 
         {sent ? (
@@ -42,7 +42,7 @@ export function ContactPage() {
                 placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
                 value={form[field]}
                 onChange={(e) => setForm({ ...form, [field]: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-neon-cyan/40"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-brand-light/40"
               />
             ))}
             <textarea
@@ -51,7 +51,7 @@ export function ContactPage() {
               placeholder="Project details"
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-neon-cyan/40 resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-brand-light/40 resize-none"
             />
             <button type="submit" className="btn-primary w-full" data-cursor="pointer">
               Send message
@@ -72,14 +72,14 @@ export function ContactPage() {
               href={site.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 text-sm text-neon-cyan hover:underline"
+              className="inline-block mt-4 text-sm text-brand-light hover:underline"
             >
               Get directions →
             </a>
           </div>
           <div className="glass-panel rounded-2xl p-6">
             <h3 className="font-display font-semibold mb-2">Email</h3>
-            <a href={`mailto:${site.email}`} className="text-neon-cyan hover:underline">
+            <a href={`mailto:${site.email}`} className="text-brand-light hover:underline">
               {site.email}
             </a>
           </div>

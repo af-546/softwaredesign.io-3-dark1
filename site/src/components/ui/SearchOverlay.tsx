@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
 import { services } from "@/data/services";
 import { caseStudies } from "@/data/caseStudies";
-import { blogPosts } from "@/data/blog";
+// import { blogPosts } from "@/data/blog";
 
 export function SearchOverlay() {
   const { searchOpen, setSearchOpen } = useApp();
@@ -22,10 +22,10 @@ export function SearchOverlay() {
       if (c.client.toLowerCase().includes(q) || c.summary.toLowerCase().includes(q))
         items.push({ label: c.client, path: `/work/${c.slug}`, type: "Case Study" });
     });
-    blogPosts.forEach((b) => {
-      if (b.title.toLowerCase().includes(q))
-        items.push({ label: b.title, path: `/blog/${b.slug}`, type: "Article" });
-    });
+    // blogPosts.forEach((b) => {
+    //   if (b.title.toLowerCase().includes(q))
+    //     items.push({ label: b.title, path: `/blog/${b.slug}`, type: "Article" });
+    // });
     return items.slice(0, 8);
   }, [query]);
 
@@ -55,7 +55,7 @@ export function SearchOverlay() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search everything..."
-              className="w-full bg-transparent border-b-2 border-neon-cyan/30 pb-4 text-3xl font-display outline-none text-ink placeholder:text-ink-muted"
+              className="w-full bg-transparent border-b-2 border-brand-light/30 pb-4 text-3xl font-display outline-none text-ink placeholder:text-ink-muted"
             />
             <div className="mt-6 space-y-2">
               {results.map((r) => (
@@ -63,10 +63,9 @@ export function SearchOverlay() {
                   key={r.path}
                   to={r.path}
                   onClick={() => setSearchOpen(false)}
-                  className="block glass-panel rounded-xl px-5 py-4 hover:border-neon-cyan/30 transition-colors"
-                  data-cursor="pointer"
+                  className="block glass-panel rounded-xl px-5 py-4 hover:border-brand-light/30 transition-colors"
                 >
-                  <span className="font-mono text-[10px] text-neon-cyan uppercase">{r.type}</span>
+                  <span className="font-mono text-[10px] text-brand-light uppercase">{r.type}</span>
                   <p className="font-display text-lg mt-1">{r.label}</p>
                 </Link>
               ))}

@@ -19,7 +19,7 @@ export function BlogPostPage() {
           ← Back to journal
         </Link>
         <div className="flex items-center gap-3 mb-6">
-          <span className="font-mono text-[10px] text-neon-magenta uppercase">{post.category}</span>
+          <span className="font-mono text-[10px] text-brand-light uppercase">{post.category}</span>
           <span className="text-xs text-ink-muted">{post.date} · {post.readTime}</span>
         </div>
         <h1 className="heading-xl mb-8">{post.title}</h1>

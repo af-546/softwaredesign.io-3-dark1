@@ -161,7 +161,7 @@ export const services: Service[] = [
       {
         question: "Can you redesign just one part of our product?",
         answer:
-          "Absolutely. Many engagements start with a single high-impact surface — onboarding, dashboard, or settings.",
+          "Absolutely. Many engagements start with a single high-impact surface like onboarding, dashboard, or settings.",
       },
       {
         question: "How do you handle complex data visualizations?",

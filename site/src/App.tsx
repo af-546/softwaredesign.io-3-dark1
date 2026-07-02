@@ -8,11 +8,8 @@ import { CaseStudyPage } from "@/pages/CaseStudyPage";
 import { ServicesPage } from "@/pages/ServicesPage";
 import { ServicePage } from "@/pages/ServicePage";
 import { ContactPage } from "@/pages/ContactPage";
-import { BlogPage } from "@/pages/BlogPage";
-import { BlogPostPage } from "@/pages/BlogPostPage";
-import { TeamPage } from "@/pages/TeamPage";
-import { PricingPage } from "@/pages/PricingPage";
-import { LabPage } from "@/pages/LabPage";
+// import { BlogPage } from "@/pages/BlogPage";
+// import { BlogPostPage } from "@/pages/BlogPostPage";
 import { PrivacyPage } from "@/pages/PrivacyPage";
 import { TermsPage } from "@/pages/TermsPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -32,11 +29,8 @@ export default function App() {
             <Route path="services" element={<ServicesPage />} />
             <Route path="services/:slug" element={<ServicePage />} />
             <Route path="contact" element={<ContactPage />} />
-            <Route path="blog" element={<BlogPage />} />
-            <Route path="blog/:slug" element={<BlogPostPage />} />
-            <Route path="team" element={<TeamPage />} />
-            <Route path="pricing" element={<PricingPage />} />
-            <Route path="lab" element={<LabPage />} />
+            {/* <Route path="blog" element={<BlogPage />} /> */}
+            {/* <Route path="blog/:slug" element={<BlogPostPage />} /> */}
             <Route path="privacy" element={<PrivacyPage />} />
             <Route path="terms" element={<TermsPage />} />
             <Route path="*" element={<NotFoundPage />} />

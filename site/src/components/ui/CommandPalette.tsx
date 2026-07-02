@@ -4,17 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
 import { services } from "@/data/services";
 import { caseStudies } from "@/data/caseStudies";
-import { blogPosts } from "@/data/blog";
+// import { blogPosts } from "@/data/blog";
 
 const pages = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Work", path: "/work" },
   { label: "Services", path: "/services" },
-  { label: "Team", path: "/team" },
-  { label: "Blog", path: "/blog" },
-  { label: "Pricing", path: "/pricing" },
-  { label: "Lab", path: "/lab" },
+  // { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -38,11 +35,11 @@ export function CommandPalette() {
         path: `/work/${c.slug}`,
         type: "work" as const,
       })),
-      ...blogPosts.map((b) => ({
-        label: b.title,
-        path: `/blog/${b.slug}`,
-        type: "blog" as const,
-      })),
+      // ...blogPosts.map((b) => ({
+      //   label: b.title,
+      //   path: `/blog/${b.slug}`,
+      //   type: "blog" as const,
+      // })),
       { label: "Book a call", path: "action:book", type: "action" as const },
     ];
     if (!q) return all;
@@ -96,11 +93,11 @@ export function CommandPalette() {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="w-full max-w-xl glass-panel rounded-2xl overflow-hidden shadow-neon"
+            className="w-full max-w-xl glass-panel rounded-2xl overflow-hidden shadow-neonSm"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10">
-              <span className="text-neon-cyan font-mono text-sm">⌘K</span>
+              <span className="text-brand-light font-mono text-sm">⌘K</span>
               <input
                 autoFocus
                 value={query}
@@ -117,7 +114,7 @@ export function CommandPalette() {
                 <li key={`${item.type}-${item.label}`}>
                   <button
                     className={`w-full text-left px-5 py-3 flex items-center justify-between transition-colors ${
-                      i === selected ? "bg-neon-cyan/10 text-neon-cyan" : "text-ink-soft hover:bg-white/5"
+                      i === selected ? "bg-brand/10 text-brand-light" : "text-ink-soft hover:bg-white/5"
                     }`}
                     onMouseEnter={() => setSelected(i)}
                     onClick={() => {
@@ -128,7 +125,6 @@ export function CommandPalette() {
                       }
                       setCommandOpen(false);
                     }}
-                    data-cursor="pointer"
                   >
                     <span>{item.label}</span>
                     <span className="font-mono text-[10px] uppercase text-ink-muted">{item.type}</span>

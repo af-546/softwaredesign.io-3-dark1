@@ -18,7 +18,7 @@ export function BackToTop() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-24 right-6 z-50 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-neon-cyan hover:border-neon-cyan/40 transition-colors"
+          className="fixed bottom-28 right-6 z-50 w-12 h-12 rounded-full glass-panel flex items-center justify-center text-brand-light hover:border-brand-light/40 transition-colors"
           aria-label="Back to top"
           data-cursor="pointer"
         >

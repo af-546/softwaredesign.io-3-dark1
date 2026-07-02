@@ -1,51 +1,62 @@
-import { Link } from "react-router-dom";
 import { caseStudies } from "@/data/caseStudies";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, RevealItem, RevealStagger, MagneticCard } from "@/components/ui/Reveal";
+import { MagneticLink } from "@/components/ui/MagneticButton";
+import { CaseStudyVisual } from "@/components/illustrations/CaseStudyVisual";
 import { useApp } from "@/context/AppContext";
 
 export function WorkShowcase() {
   const { setLightboxImage } = useApp();
 
   return (
-    <section className="section-padding py-24">
-      <Reveal className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+    <section className="section-padding py-20 md:py-28">
+      <Reveal className="section-container flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
         <div>
           <p className="eyebrow mb-4">Selected work</p>
           <h2 className="heading-lg">Results, not renderings</h2>
         </div>
-        <Link to="/work" className="btn-ghost text-sm" data-cursor="pointer">
+        <MagneticLink to="/work" className="btn-ghost text-sm">
           View all projects →
-        </Link>
+        </MagneticLink>
       </Reveal>
-      <div className="max-w-7xl mx-auto space-y-6">
-        {caseStudies.map((study, i) => (
-          <Reveal key={study.slug} delay={i * 0.1}>
-            <div className="group glass-panel rounded-2xl overflow-hidden grid lg:grid-cols-2 hover:border-neon-cyan/20 transition-colors">
-              <button
-                onClick={() => setLightboxImage(study.client)}
-                className="aspect-[16/10] lg:aspect-auto bg-gradient-to-br from-neon-cyan/10 via-abyss to-neon-magenta/10 flex items-center justify-center p-8 text-left"
-                data-cursor="pointer"
-              >
-                <div>
-                  <span className="font-mono text-xs text-neon-cyan">{study.category} · {study.year}</span>
-                  <h3 className="font-display text-3xl font-bold mt-2">{study.client}</h3>
-                </div>
-              </button>
-              <div className="p-8 flex flex-col justify-center">
-                <p className="text-ink-soft leading-relaxed">{study.summary}</p>
-                <p className="mt-4 text-neon-gold font-display font-semibold">{study.outcome}</p>
-                <Link
-                  to={`/work/${study.slug}`}
-                  className="mt-6 text-neon-cyan text-sm hover:underline inline-flex items-center gap-1"
+      <RevealStagger className="section-container space-y-10 md:space-y-12">
+        {caseStudies.map((study) => (
+          <RevealItem key={study.slug}>
+            <MagneticCard>
+              <div className="group glass-panel rounded-2xl overflow-hidden grid lg:grid-cols-[1.15fr_1fr] hover:border-brand-light/25 transition-colors">
+                <button
+                  onClick={() => setLightboxImage(study.client)}
+                  className="relative min-h-[280px] sm:min-h-[340px] lg:min-h-[420px] bg-[#0a1020] border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden"
                   data-cursor="pointer"
                 >
-                  Read case study →
-                </Link>
+                  <div className="absolute inset-0 p-5 md:p-8 lg:p-10">
+                    <CaseStudyVisual category={study.category} client={study.client} />
+                  </div>
+                  <div className="absolute top-5 left-5">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-brand-light bg-brand/15 border border-brand/25 rounded-full px-3 py-1">
+                      {study.category}
+                    </span>
+                  </div>
+                </button>
+                <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                  <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold">
+                    {study.client}
+                  </h3>
+                  <p className="text-ink-soft leading-relaxed mt-4 text-base md:text-lg">
+                    {study.summary}
+                  </p>
+                  <p className="mt-5 text-brand-light font-display font-semibold">{study.outcome}</p>
+                  <MagneticLink
+                    to={`/work/${study.slug}`}
+                    className="mt-8 text-brand-light text-sm hover:underline inline-flex items-center gap-1 w-fit"
+                  >
+                    Read case study →
+                  </MagneticLink>
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </MagneticCard>
+          </RevealItem>
         ))}
-      </div>
+      </RevealStagger>
     </section>
   );
 }
