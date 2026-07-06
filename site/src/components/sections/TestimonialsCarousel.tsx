@@ -11,7 +11,7 @@ export function TestimonialsCarousel() {
       </Reveal>
       <RevealStagger className="section-container grid gap-5 md:grid-cols-3">
         {testimonials.map((item) => (
-          <RevealItem key={item.author}>
+          <RevealItem key={item.company}>
             <blockquote className="glass-panel rounded-2xl p-6 md:p-7 h-full flex flex-col hover:border-brand-light/25 transition-colors">
               <div className="flex gap-1 mb-5">
                 {Array.from({ length: item.rating }).map((_, i) => (

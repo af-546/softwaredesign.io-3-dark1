@@ -2,7 +2,6 @@ import { useState } from "react";
 import { usePageTitle } from "@/hooks/usePageTitle";
 import { site } from "@/data/site";
 import { Reveal } from "@/components/ui/Reveal";
-import { AccessibilityPanel } from "@/components/ui/AccessibilityPanel";
 import { useApp } from "@/context/AppContext";
 
 export function ContactPage() {
@@ -91,7 +90,6 @@ export function ContactPage() {
               loading="lazy"
             />
           </div>
-          <AccessibilityPanel />
         </div>
       </Reveal>
     </div>

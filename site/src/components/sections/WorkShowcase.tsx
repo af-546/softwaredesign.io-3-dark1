@@ -29,7 +29,11 @@ export function WorkShowcase() {
                   data-cursor="pointer"
                 >
                   <div className="absolute inset-0 p-5 md:p-8 lg:p-10">
-                    <CaseStudyVisual category={study.category} client={study.client} />
+                    <CaseStudyVisual
+                      screenshot={study.screenshot}
+                      website={study.website}
+                      client={study.client}
+                    />
                   </div>
                   <div className="absolute top-5 left-5">
                     <span className="font-mono text-[10px] uppercase tracking-wider text-brand-light bg-brand/15 border border-brand/25 rounded-full px-3 py-1">

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AppProvider } from "@/context/AppContext";
 import { Layout } from "@/components/layout/Layout";
 import { HomePage } from "@/pages/HomePage";
@@ -25,6 +25,8 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="work" element={<WorkPage />} />
+            <Route path="work/sarahs-cleaners" element={<Navigate to="/work/clean-house-nj" replace />} />
+            <Route path="work/sarah-cleaners" element={<Navigate to="/work/clean-house-nj" replace />} />
             <Route path="work/:slug" element={<CaseStudyPage />} />
             <Route path="services" element={<ServicesPage />} />
             <Route path="services/:slug" element={<ServicePage />} />

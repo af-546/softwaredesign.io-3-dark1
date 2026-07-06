@@ -27,7 +27,15 @@ export function CaseStudyPage() {
           ))}
         </div>
         <h1 className="heading-xl mb-4">{study.client}</h1>
-        <p className="text-xl text-brand-light font-display font-semibold mb-8">{study.outcome}</p>
+        <p className="text-xl text-brand-light font-display font-semibold mb-4">{study.outcome}</p>
+        <a
+          href={study.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-ink-soft hover:text-brand-light transition-colors mb-8 inline-block"
+        >
+          Visit site →
+        </a>
         <div className="grid sm:grid-cols-3 gap-4 mb-12">
           {[
             { label: "Industry", value: study.industry },

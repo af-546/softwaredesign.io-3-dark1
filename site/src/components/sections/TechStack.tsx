@@ -10,10 +10,13 @@ export function TechStack() {
           Modern stack, production-ready delivery.
         </p>
       </Reveal>
-      <RevealStagger className="section-container grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
-        {techStack.map((tech) => (
+      <RevealStagger className="section-container flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
+        {techStack.map((tech, index) => (
           <RevealItem key={tech}>
-            <span className="glass-panel rounded-lg px-4 py-3.5 text-sm font-mono text-ink-soft hover:text-brand-light hover:border-brand-light/30 transition-colors text-center block h-full">
+            <span
+              className="glass-panel rounded-full px-5 py-2.5 text-sm font-mono text-ink-soft hover:text-brand-light hover:border-brand-light/30 transition-colors inline-block animate-float"
+              style={{ animationDelay: `${(index % 6) * -1.1}s` }}
+            >
               {tech}
             </span>
           </RevealItem>

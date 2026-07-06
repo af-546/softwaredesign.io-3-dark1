@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
+import { FooterPreferences } from "@/components/layout/FooterPreferences";
 
 export function Footer() {
   return (
@@ -9,7 +10,9 @@ export function Footer() {
         <div className="section-container grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <Link to="/" className="font-display text-2xl font-bold" data-cursor="pointer">
-              <span className="text-gradient">Software</span>Design.io
+              <span className="text-gradient">Software</span>
+              <span className="text-ink">Design</span>
+              <span className="text-brand-light">.io</span>
             </Link>
             <p className="mt-4 text-ink-soft text-sm leading-relaxed">{site.description}</p>
             <p className="mt-4 text-sm text-ink-muted">
@@ -81,7 +84,8 @@ export function Footer() {
         </div>
         <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5 text-xs text-ink-muted">
           <p>© {new Date().getFullYear()} SoftwareDesign.io. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
+            <FooterPreferences />
             <Link to="/privacy" className="hover:text-brand-light transition-colors">
               Privacy
             </Link>

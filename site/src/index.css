@@ -20,12 +20,6 @@
     @apply bg-void font-body text-ink overflow-x-hidden;
   }
 
-  @media (min-width: 769px) {
-    body {
-      cursor: none;
-    }
-  }
-
   ::selection {
     @apply bg-brand/30 text-ink;
   }
@@ -51,6 +45,21 @@
 @layer components {
   .glass-panel {
     @apply border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .nav-bar {
+    background-color: rgba(12, 18, 34, 0.92);
+    @apply backdrop-blur-xl border-b border-white/[0.08];
+  }
+
+  .nav-bar-scrolled {
+    background-color: rgba(12, 18, 34, 0.98);
+    @apply border-white/10;
+  }
+
+  .nav-dropdown {
+    background-color: #0c1222;
+    @apply rounded-xl border border-white/10 shadow-xl;
   }
 
   .neon-border {

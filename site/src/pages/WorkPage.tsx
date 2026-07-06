@@ -47,7 +47,11 @@ export function WorkPage() {
               data-cursor="pointer"
             >
               <div className="aspect-[4/3] rounded-xl bg-[#0a1020] border border-white/5 mb-4 overflow-hidden p-3">
-                <CaseStudyVisual category={study.category} client={study.client} />
+                <CaseStudyVisual
+                  screenshot={study.screenshot}
+                  website={study.website}
+                  client={study.client}
+                />
               </div>
               <h2 className="font-display text-xl font-bold group-hover:text-gradient transition-all">
                 {study.client}

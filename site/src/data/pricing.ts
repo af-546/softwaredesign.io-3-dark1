@@ -10,7 +10,7 @@ export type PricingTier = {
 export const pricingTiers: PricingTier[] = [
   {
     name: "Launch",
-    price: "$12k–$25k",
+    price: "$12k-$25k",
     description: "Single landing page or small SMB site. Fast, focused, production-ready.",
     features: [
       "Discovery & strategy (1 week)",
@@ -23,7 +23,7 @@ export const pricingTiers: PricingTier[] = [
   },
   {
     name: "Scale",
-    price: "$30k–$75k",
+    price: "$30k-$75k",
     description: "Multi-page sites, SaaS surface redesigns, or product design engagements.",
     features: [
       "Everything in Launch",

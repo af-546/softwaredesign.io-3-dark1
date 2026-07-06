@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       "Startups often ask us when to invest in a design system. The answer depends on your team size and shipping velocity.",
       "Before 3 engineers: focus on core flows and a simple component library in Figma. Don't over-engineer tokens.",
-      "At 3–10 engineers: invest in documented components, spacing scales, and a shared Figma library. This is when inconsistency starts costing real time.",
+      "At 3-10 engineers: invest in documented components, spacing scales, and a shared Figma library. This is when inconsistency starts costing real time.",
       "Beyond 10: you need automated linting, Storybook, and design-dev sync rituals. We help teams at every stage.",
     ],
   },

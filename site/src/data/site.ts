@@ -9,8 +9,8 @@ export const site = {
     city: "Boston, MA 02116",
   },
   hours: {
-    label: "Monday – Friday",
-    time: "9:00 AM – 6:00 PM ET",
+    label: "Monday - Friday",
+    time: "9:00 AM - 6:00 PM ET",
   },
   mapsUrl: "https://maps.google.com/?q=867+Boylston+St+Boston+MA+02116",
 };
@@ -45,9 +45,9 @@ export const faqs = [
 export const testimonials = [
   {
     quote:
-      "We needed a site that didn't look like every other cleaning website. They made a modern stylish website and got our business booming.",
-    author: "Sarah",
-    company: "Sarah's Cleaners",
+      "We needed a site that did not look like every other cleaning website in Hudson County. They built something modern, made booking easy, and our quote requests picked up quickly.",
+    author: "CleanHouse NJ",
+    company: "Jersey City & Hoboken",
     rating: 5,
   },
   {
@@ -55,7 +55,7 @@ export const testimonials = [
       "From kickoff to production in weeks. Our old agency would still have been in the discovery deck.",
     author: "Rowan",
     company: "Rowan Lim",
-    rating: 5,
+    rating: 4,
   },
   {
     quote:
@@ -100,9 +100,32 @@ export const principles = [
 ];
 
 export const trustedLogos = [
-  { name: "Rowan Lim", src: "/logos/rowan-lim.png", crop: false },
-  { name: "Umbulizer", src: "/logos/umbulizer.jpg", crop: true },
-  { name: "Sarah's Cleaners", src: "/logos/sarah-cleaners.avif", crop: false },
+  {
+    name: "Rowan Lim",
+    src: "/logos/rowan-lim.png",
+    href: "https://rowanscreative.com",
+    frameClass: "bg-black/50",
+    imageClass:
+      "h-[72%] w-auto max-w-[92%] object-contain brightness-110 contrast-110 drop-shadow-[0_0_18px_rgba(255,255,255,0.12)]",
+    hoverScale: "group-hover:scale-[1.14]",
+  },
+  {
+    name: "Umbulizer",
+    src: "/logos/umbulizer.jpg",
+    href: "https://umbulizer-website.vercel.app",
+    frameClass: "bg-white",
+    imageClass: "h-[130%] w-full object-cover object-center",
+    hoverScale: "group-hover:scale-[1.08]",
+  },
+  {
+    name: "CleanHouse NJ",
+    src: "/logos/clean-house-nj.png",
+    href: "https://cleanhousenj.com",
+    frameClass: "bg-white/[0.97]",
+    imageClass:
+      "h-[70%] w-auto max-w-[90%] object-contain contrast-[1.05] saturate-[1.08]",
+    hoverScale: "group-hover:scale-[1.12]",
+  },
 ];
 
 export const processSteps = [
@@ -140,7 +163,6 @@ export const capabilities = [
   "Prototyping",
   "Brand Identity",
   "SEO Foundation",
-  "Engineering Handoff",
 ];
 
 export const techStack = [

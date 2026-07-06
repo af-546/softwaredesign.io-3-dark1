@@ -92,7 +92,7 @@ export const services: Service[] = [
       {
         question: "How long does a typical web design project take?",
         answer:
-          "Four to eight weeks depending on scope. Single landing page: 3–4 weeks. Multi-page SMB site: 6–8 weeks. E-commerce build: 8–12 weeks.",
+          "Four to eight weeks depending on scope. Single landing page: 3-4 weeks. Multi-page SMB site: 6-8 weeks. E-commerce build: 8-12 weeks.",
       },
     ],
   },

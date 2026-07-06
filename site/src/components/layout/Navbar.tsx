@@ -42,8 +42,8 @@ export function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-panel border-b border-white/5 py-3" : "py-5 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 nav-bar ${
+        scrolled ? "nav-bar-scrolled py-3" : "py-5"
       }`}
     >
       <div className="section-padding flex items-center justify-between">
@@ -73,7 +73,7 @@ export function Navbar() {
 
             {servicesOpen && (
               <div
-                className="absolute top-full left-0 mt-2 w-64 glass-panel rounded-xl py-2 shadow-neonSm border border-white/10"
+                className="absolute top-full left-0 mt-2 w-64 nav-dropdown py-2"
                 onMouseLeave={() => setServicesOpen(false)}
               >
                 <Link

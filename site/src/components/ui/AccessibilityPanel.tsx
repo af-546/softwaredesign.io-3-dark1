@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useApp } from "@/context/AppContext";
 
-export function AccessibilityPanel() {
+export function AccessibilityPanel({ embedded = false }: { embedded?: boolean }) {
   const {
     reducedMotion,
     toggleReducedMotion,
@@ -16,8 +16,8 @@ export function AccessibilityPanel() {
   } = useApp();
 
   return (
-    <div className="glass-panel rounded-2xl p-6 space-y-4">
-      <h3 className="font-display font-semibold">Accessibility & preferences</h3>
+    <div className={embedded ? "p-5 space-y-4" : "glass-panel rounded-2xl p-6 space-y-4"}>
+      <h3 className="font-display font-semibold text-sm">Accessibility & preferences</h3>
       {[
         { label: "Reduce motion", active: reducedMotion, toggle: toggleReducedMotion },
         { label: "High contrast", active: highContrast, toggle: toggleHighContrast },
@@ -33,7 +33,7 @@ export function AccessibilityPanel() {
           <span className="text-sm text-ink-soft">{item.label}</span>
           <div
             className={`w-11 h-6 rounded-full transition-colors relative ${
-              item.active ? "bg-neon-cyan" : "bg-white/10"
+              item.active ? "bg-brand-light" : "bg-white/10"
             }`}
           >
             <motion.div
