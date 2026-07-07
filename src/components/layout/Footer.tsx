@@ -2,14 +2,21 @@ import { Link } from "react-router-dom";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { FooterPreferences } from "@/components/layout/FooterPreferences";
+import { useScrollToTopOnClick } from "@/hooks/useScrollToTopOnClick";
 
 export function Footer() {
+  const scrollToTopOnClick = useScrollToTopOnClick();
   return (
     <footer className="relative border-t border-white/5 mt-24 bg-abyss/50">
       <div className="section-padding py-16">
         <div className="section-container grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
-            <Link to="/" className="font-display text-2xl font-bold" data-cursor="pointer">
+            <Link
+              to="/"
+              onClick={scrollToTopOnClick("/")}
+              className="font-display text-2xl font-bold"
+              data-cursor="pointer"
+            >
               <span className="text-gradient">Software</span>
               <span className="text-ink">Design</span>
               <span className="text-brand-light">.io</span>
@@ -36,6 +43,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     to={`/services/${s.slug}`}
+                    onClick={scrollToTopOnClick(`/services/${s.slug}`)}
                     className="text-sm text-ink-soft hover:text-brand-light transition-colors"
                     data-cursor="pointer"
                   >
@@ -58,6 +66,7 @@ export function Footer() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
+                    onClick={scrollToTopOnClick(l.to)}
                     className="text-sm text-ink-soft hover:text-brand-light transition-colors"
                     data-cursor="pointer"
                   >
@@ -75,7 +84,12 @@ export function Footer() {
               <li>{site.hours.label}</li>
               <li>{site.hours.time}</li>
               <li className="pt-2">
-                <Link to="/contact" className="text-brand-light hover:underline" data-cursor="pointer">
+                <Link
+                  to="/contact"
+                  onClick={scrollToTopOnClick("/contact")}
+                  className="text-brand-light hover:underline"
+                  data-cursor="pointer"
+                >
                   Start a project →
                 </Link>
               </li>
@@ -86,10 +100,10 @@ export function Footer() {
           <p>© {new Date().getFullYear()} SoftwareDesign.io. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
             <FooterPreferences />
-            <Link to="/privacy" className="hover:text-brand-light transition-colors">
+            <Link to="/privacy" onClick={scrollToTopOnClick("/privacy")} className="hover:text-brand-light transition-colors">
               Privacy
             </Link>
-            <Link to="/terms" className="hover:text-brand-light transition-colors">
+            <Link to="/terms" onClick={scrollToTopOnClick("/terms")} className="hover:text-brand-light transition-colors">
               Terms
             </Link>
           </div>

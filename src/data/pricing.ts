@@ -34,7 +34,7 @@ export const pricingTiers: PricingTier[] = [
       "60-day post-launch support",
     ],
     highlighted: true,
-    cta: "Book a call",
+    cta: "Contact us",
   },
   {
     name: "Enterprise",

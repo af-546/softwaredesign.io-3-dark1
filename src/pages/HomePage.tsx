@@ -7,7 +7,6 @@ import { StudioHighlights } from "@/components/sections/StudioHighlights";
 import { ProcessInteractive } from "@/components/sections/ProcessInteractive";
 import { WorkShowcase } from "@/components/sections/WorkShowcase";
 // import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
-import { HorizontalGallery } from "@/components/sections/HorizontalGallery";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { TechStack } from "@/components/sections/TechStack";
 // import { BlogPreview } from "@/components/sections/BlogPreview";
@@ -27,7 +26,6 @@ export function HomePage() {
       <ProcessInteractive />
       <WorkShowcase />
       {/* <BeforeAfterSection /> */}
-      <HorizontalGallery />
       <TestimonialsCarousel />
       <TechStack />
       {/* <BlogPreview /> */}

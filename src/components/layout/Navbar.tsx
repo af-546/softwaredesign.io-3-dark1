@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useApp } from "@/context/AppContext";
+import { useScrollToTopOnClick } from "@/hooks/useScrollToTopOnClick";
 import { services } from "@/data/services";
 
 const links = [
@@ -10,8 +11,9 @@ const links = [
 ];
 
 export function Navbar() {
-  const { setMenuOpen, setBookingOpen } = useApp();
+  const { setMenuOpen } = useApp();
   const location = useLocation();
+  const scrollToTopOnClick = useScrollToTopOnClick();
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -47,7 +49,12 @@ export function Navbar() {
       }`}
     >
       <div className="section-padding flex items-center justify-between">
-        <Link to="/" className="font-display text-xl font-bold tracking-tight" data-cursor="pointer">
+        <Link
+          to="/"
+          onClick={scrollToTopOnClick("/")}
+          className="font-display text-xl font-bold tracking-tight"
+          data-cursor="pointer"
+        >
           <span className="text-gradient">Software</span>
           <span className="text-ink">Design</span>
           <span className="text-brand-light">.io</span>
@@ -78,6 +85,7 @@ export function Navbar() {
               >
                 <Link
                   to="/services"
+                  onClick={scrollToTopOnClick("/services")}
                   className="block px-4 py-2.5 text-sm text-ink-soft hover:text-brand-light hover:bg-white/5 border-b border-white/5 mb-1"
                   data-cursor="pointer"
                 >
@@ -87,6 +95,7 @@ export function Navbar() {
                   <Link
                     key={service.slug}
                     to={`/services/${service.slug}`}
+                    onClick={scrollToTopOnClick(`/services/${service.slug}`)}
                     className="block px-4 py-2.5 text-sm text-ink-soft hover:text-brand-light hover:bg-white/5"
                     data-cursor="pointer"
                   >
@@ -101,6 +110,7 @@ export function Navbar() {
             <Link
               key={link.to}
               to={link.to}
+              onClick={scrollToTopOnClick(link.to)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location.pathname.startsWith(link.to)
                   ? "text-brand-light bg-brand/10"
@@ -114,13 +124,14 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => setBookingOpen(true)}
+          <Link
+            to="/contact"
+            onClick={scrollToTopOnClick("/contact")}
             className="hidden md:inline-flex btn-primary text-sm py-2.5 px-5"
             data-cursor="pointer"
           >
-            Book a call
-          </button>
+            Contact us
+          </Link>
           <button
             onClick={() => setMenuOpen(true)}
             className="lg:hidden w-10 h-10 rounded-lg glass-panel flex flex-col items-center justify-center gap-1"

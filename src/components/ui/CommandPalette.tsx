@@ -1,7 +1,8 @@
-import { useEffect, useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState, useMemo, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
+import { scrollToTop } from "@/lib/scrollToTop";
 import { services } from "@/data/services";
 import { caseStudies } from "@/data/caseStudies";
 // import { blogPosts } from "@/data/blog";
@@ -16,10 +17,23 @@ const pages = [
 ];
 
 export function CommandPalette() {
-  const { commandOpen, setCommandOpen, setBookingOpen } = useApp();
+  const { commandOpen, setCommandOpen } = useApp();
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(0);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const goTo = useCallback(
+    (path: string) => {
+      setCommandOpen(false);
+      if (pathname === path) {
+        scrollToTop();
+        return;
+      }
+      navigate(path);
+    },
+    [navigate, pathname, setCommandOpen],
+  );
 
   const items = useMemo(() => {
     const q = query.toLowerCase();
@@ -40,7 +54,6 @@ export function CommandPalette() {
       //   path: `/blog/${b.slug}`,
       //   type: "blog" as const,
       // })),
-      { label: "Book a call", path: "action:book", type: "action" as const },
     ];
     if (!q) return all;
     return all.filter((i) => i.label.toLowerCase().includes(q));
@@ -66,18 +79,12 @@ export function CommandPalette() {
       }
       if (e.key === "Enter" && items[selected]) {
         e.preventDefault();
-        const item = items[selected];
-        if (item.path === "action:book") {
-          setBookingOpen(true);
-        } else {
-          navigate(item.path);
-        }
-        setCommandOpen(false);
+        goTo(items[selected].path);
       }
     };
     window.addEventListener("keydown", handle);
     return () => window.removeEventListener("keydown", handle);
-  }, [commandOpen, items, selected, navigate, setCommandOpen, setBookingOpen]);
+  }, [commandOpen, items, selected, goTo]);
 
   return (
     <AnimatePresence>
@@ -117,14 +124,7 @@ export function CommandPalette() {
                       i === selected ? "bg-brand/10 text-brand-light" : "text-ink-soft hover:bg-white/5"
                     }`}
                     onMouseEnter={() => setSelected(i)}
-                    onClick={() => {
-                      if (item.path === "action:book") {
-                        setBookingOpen(true);
-                      } else {
-                        navigate(item.path);
-                      }
-                      setCommandOpen(false);
-                    }}
+                    onClick={() => goTo(item.path)}
                   >
                     <span>{item.label}</span>
                     <span className="font-mono text-[10px] uppercase text-ink-muted">{item.type}</span>

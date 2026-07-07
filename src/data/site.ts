@@ -46,21 +46,21 @@ export const testimonials = [
   {
     quote:
       "We needed a site that did not look like every other cleaning website in Hudson County. They built something modern, made booking easy, and our quote requests picked up quickly.",
-    author: "CleanHouse NJ",
-    company: "Jersey City & Hoboken",
+    author: "Mark Cohen",
+    company: "CleanHouse NJ",
     rating: 5,
   },
   {
     quote:
       "From kickoff to production in weeks. Our old agency would still have been in the discovery deck.",
-    author: "Rowan",
-    company: "Rowan Lim",
+    author: "Rowan Lim",
+    company: "Rowan Lims Photography",
     rating: 4,
   },
   {
     quote:
       "They pushed back on a feature we wanted and turned out they were right. Saved us from building the wrong thing.",
-    author: "Umbulizer",
+    author: "Shaheer Piracha",
     company: "Umbulizer",
     rating: 5,
   },
@@ -114,7 +114,7 @@ export const trustedLogos = [
     src: "/logos/umbulizer.jpg",
     href: "https://umbulizer-website.vercel.app",
     frameClass: "bg-white",
-    imageClass: "h-[130%] w-full object-cover object-center",
+    imageClass: "h-[78%] w-auto max-w-[92%] object-contain",
     hoverScale: "group-hover:scale-[1.08]",
   },
   {

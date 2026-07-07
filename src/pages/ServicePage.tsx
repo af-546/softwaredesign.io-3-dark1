@@ -5,13 +5,11 @@ import { caseStudies } from "@/data/caseStudies";
 import { Reveal } from "@/components/ui/Reveal";
 import { Accordion } from "@/components/ui/Accordion";
 import { ContactCTA } from "@/components/sections/ContactCTA";
-import { useApp } from "@/context/AppContext";
 import { NotFoundPage } from "./NotFoundPage";
 
 export function ServicePage() {
   const { slug } = useParams();
   const service = slug ? getServiceBySlug(slug) : undefined;
-  const { setBookingOpen } = useApp();
 
   usePageTitle(service?.title ?? "Service", service?.description);
 
@@ -31,9 +29,9 @@ export function ServicePage() {
         <p className="text-xl text-ink-soft mb-8">{service.tagline}</p>
         <p className="text-ink-soft leading-relaxed mb-10">{service.description}</p>
         <div className="flex gap-4 mb-16">
-          <button onClick={() => setBookingOpen(true)} className="btn-primary" data-cursor="pointer">
-            Start a project
-          </button>
+          <Link to="/contact" className="btn-primary" data-cursor="pointer">
+            Contact us
+          </Link>
           <Link to="/work" className="btn-ghost" data-cursor="pointer">
             See related work
           </Link>

@@ -1,10 +1,7 @@
-import { MagneticButton, MagneticLink } from "@/components/ui/MagneticButton";
+import { MagneticLink } from "@/components/ui/MagneticButton";
 import { Reveal } from "@/components/ui/Reveal";
-import { useApp } from "@/context/AppContext";
 
 export function ContactCTA() {
-  const { setBookingOpen } = useApp();
-
   return (
     <section className="section-padding py-20 md:py-28">
       <Reveal>
@@ -17,10 +14,7 @@ export function ContactCTA() {
               Tell us about your project. We reply within one business day.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <MagneticButton className="btn-primary" onClick={() => setBookingOpen(true)}>
-                Book a call
-              </MagneticButton>
-              <MagneticLink to="/contact" className="btn-ghost">
+              <MagneticLink to="/contact" className="btn-primary">
                 Contact us
               </MagneticLink>
             </div>

@@ -8,7 +8,6 @@ export function useKeyboardShortcuts() {
     shortcutsOpen,
     setShortcutsOpen,
     setChatOpen,
-    setBookingOpen,
   } = useApp();
 
   useEffect(() => {
@@ -32,7 +31,6 @@ export function useKeyboardShortcuts() {
         setSearchOpen(false);
         setShortcutsOpen(false);
         setChatOpen(false);
-        setBookingOpen(false);
       }
     }
 
@@ -44,6 +42,5 @@ export function useKeyboardShortcuts() {
     shortcutsOpen,
     setShortcutsOpen,
     setChatOpen,
-    setBookingOpen,
   ]);
 }

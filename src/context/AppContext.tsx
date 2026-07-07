@@ -40,8 +40,6 @@ type AppContextType = {
   toasts: Toast[];
   addToast: (message: string, type?: Toast["type"]) => void;
   removeToast: (id: string) => void;
-  bookingOpen: boolean;
-  setBookingOpen: (v: boolean) => void;
   shortcutsOpen: boolean;
   setShortcutsOpen: (v: boolean) => void;
 };
@@ -69,7 +67,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     }
   });
   const [toasts, setToasts] = useState<Toast[]>([]);
-  const [bookingOpen, setBookingOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   const addToast = useCallback((message: string, type: Toast["type"] = "info") => {
@@ -131,8 +128,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
         toasts,
         addToast,
         removeToast,
-        bookingOpen,
-        setBookingOpen,
         shortcutsOpen,
         setShortcutsOpen,
       }}

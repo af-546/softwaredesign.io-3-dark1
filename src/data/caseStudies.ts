@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Custom portfolio site for a Boston-based cinematographer and creative director.",
     challenge:
-      "Rowan's Creative had outgrown a personal biography theme. The template couldn't showcase stills and motion work the way they deserved, mobile felt like an afterthought, and the site read like a generic resume instead of a hire-ready portfolio.",
+      "Rowan's Portfolio website had outgrown a personal biography theme. The template couldn't showcase stills and motion work the way they deserved, mobile felt like an afterthought, and the site read like a generic resume instead of a hire-ready portfolio.",
     approach:
       "We started with discovery: site analytics, competitor audits, and mapping where visitors dropped off. The redesign centers full-bleed imagery, project storytelling, and a clean path to inquiry. Built on a custom frontend so layout and motion weren't limited by an off-the-shelf theme.",
     results: [
@@ -50,9 +50,9 @@ export const caseStudies: CaseStudy[] = [
     services: ["Web Design", "Product Strategy"],
     year: "2025",
     duration: "Multi-week engagement",
-    outcome: "A production site that explains UMV-001 clearly and converts hospital buyers.",
+    outcome: "A production site that explains UMV-001 clearly, converting visitors into demo requests.",
     summary:
-      "Custom marketing site for Umbulizer, designed and built for launch on Vercel.",
+      "Custom marketing site for Umbulizer, designed and built for production launch.",
     challenge:
       "Umbulizer had outgrown their old site. They needed a credible product story for UMV-001, FDA authorization messaging, and clear paths to demo requests - without burying visitors in technical detail or building pages for features that were not ready to ship.",
     approach:

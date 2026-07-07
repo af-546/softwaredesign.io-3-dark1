@@ -1,11 +1,8 @@
-import { MagneticButton, MagneticLink } from "@/components/ui/MagneticButton";
+import { MagneticLink } from "@/components/ui/MagneticButton";
 import { PhoneMockup, LaptopMockup, TabletMockup } from "@/components/illustrations/DeviceMockups";
 import { Reveal } from "@/components/ui/Reveal";
-import { useApp } from "@/context/AppContext";
 
 export function Hero() {
-  const { setBookingOpen } = useApp();
-
   return (
     <section className="relative min-h-[88vh] flex items-center section-padding pt-32 pb-16 overflow-hidden">
       <div className="section-container w-full grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
@@ -26,9 +23,9 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="flex flex-wrap gap-4">
-              <MagneticButton className="btn-primary" onClick={() => setBookingOpen(true)}>
-                Start a project →
-              </MagneticButton>
+              <MagneticLink to="/contact" className="btn-primary">
+                Contact us →
+              </MagneticLink>
               <MagneticLink to="/work" className="btn-ghost">
                 See our work
               </MagneticLink>

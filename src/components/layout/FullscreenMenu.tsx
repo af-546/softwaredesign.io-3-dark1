@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useApp } from "@/context/AppContext";
+import { useScrollToTopOnClick } from "@/hooks/useScrollToTopOnClick";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 
@@ -14,6 +15,8 @@ const menuLinks = [
 
 export function FullscreenMenu() {
   const { menuOpen, setMenuOpen } = useApp();
+  const scrollToTopOnClick = useScrollToTopOnClick();
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <AnimatePresence>
@@ -43,7 +46,7 @@ export function FullscreenMenu() {
               >
                 <Link
                   to={link.to}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={scrollToTopOnClick(link.to, closeMenu)}
                   className="font-display text-3xl sm:text-4xl font-bold text-ink hover:text-brand-light transition-colors block py-2 text-center"
                   data-cursor="pointer"
                 >
@@ -60,7 +63,7 @@ export function FullscreenMenu() {
                   <Link
                     key={service.slug}
                     to={`/services/${service.slug}`}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={scrollToTopOnClick(`/services/${service.slug}`, closeMenu)}
                     className="text-center py-2 text-ink-soft hover:text-brand-light text-sm"
                     data-cursor="pointer"
                   >

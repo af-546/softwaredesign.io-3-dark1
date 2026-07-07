@@ -6,14 +6,11 @@ import { FullscreenMenu } from "./FullscreenMenu";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { BackToTop } from "@/components/ui/BackToTop";
 import { CommandPalette } from "@/components/ui/CommandPalette";
 import { SearchOverlay } from "@/components/ui/SearchOverlay";
 import { CookieConsent } from "@/components/ui/CookieConsent";
-import { ContactFAB } from "@/components/ui/ContactFAB";
 import { ToastContainer } from "@/components/ui/ToastContainer";
 import { Lightbox } from "@/components/ui/Lightbox";
-import { BookingModal } from "@/components/ui/BookingModal";
 import { KeyboardShortcutsPanel } from "@/components/ui/KeyboardShortcutsPanel";
 import { Preloader } from "@/components/ui/Preloader";
 import { PageTransition } from "@/components/ui/PageTransition";
@@ -47,14 +44,11 @@ export function Layout() {
             </AnimatePresence>
           </main>
           <Footer />
-          <BackToTop />
           <CommandPalette />
           <SearchOverlay />
           <CookieConsent />
-          <ContactFAB />
           <ToastContainer />
           <Lightbox />
-          <BookingModal />
           <KeyboardShortcutsPanel />
         </>
       )}

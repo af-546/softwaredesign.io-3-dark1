@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import { useApp } from "@/context/AppContext";
+import { registerLenis, scrollToTop } from "@/lib/scrollToTop";
 
 export function useSmoothScroll() {
   const { reducedMotion } = useApp();
@@ -19,6 +20,7 @@ export function useSmoothScroll() {
     });
 
     lenisRef.current = lenis;
+    registerLenis(lenis);
     document.documentElement.classList.add("lenis");
 
     function raf(time: number) {
@@ -30,20 +32,13 @@ export function useSmoothScroll() {
     return () => {
       cancelAnimationFrame(id);
       lenisRef.current = null;
+      registerLenis(null);
       lenis.destroy();
       document.documentElement.classList.remove("lenis");
     };
   }, [reducedMotion]);
 
   useEffect(() => {
-    const lenis = lenisRef.current;
-    if (lenis) {
-      lenis.scrollTo(0, { immediate: true });
-      return;
-    }
-
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    scrollToTop();
   }, [pathname, reducedMotion]);
 }
