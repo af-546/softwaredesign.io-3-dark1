@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/publicAsset";
+
 export type CaseStudy = {
   slug: string;
   title: string;
@@ -39,7 +41,7 @@ export const caseStudies: CaseStudy[] = [
       "Clear hire flow that turned casual visitors into project inquiries",
     ],
     website: "https://rowanscreative.com",
-    screenshot: "/case-studies/rowans-creative.jpg",
+    screenshot: publicAsset("case-studies/rowans-creative.jpg"),
   },
   {
     slug: "umbulizer",
@@ -63,7 +65,7 @@ export const caseStudies: CaseStudy[] = [
       "Production-ready build the team can extend as the product roadmap evolves",
     ],
     website: "https://umbulizer-website.vercel.app",
-    screenshot: "/case-studies/umbulizer.jpg",
+    screenshot: publicAsset("case-studies/umbulizer.jpg"),
   },
   {
     slug: "clean-house-nj",
@@ -87,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
       "Local SEO structure for Hudson County neighborhoods and service types",
     ],
     website: "https://cleanhousenj.com",
-    screenshot: "/case-studies/clean-house-nj.jpg",
+    screenshot: publicAsset("case-studies/clean-house-nj.jpg"),
   },
 ];
 

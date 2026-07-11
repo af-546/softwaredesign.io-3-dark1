@@ -1,3 +1,5 @@
+import { publicAsset } from "@/lib/publicAsset";
+
 export const site = {
   name: "SoftwareDesign.io",
   tagline: "Software design that ships.",
@@ -102,7 +104,7 @@ export const principles = [
 export const trustedLogos = [
   {
     name: "Rowan Lim",
-    src: "/logos/rowan-lim.png",
+    src: publicAsset("logos/rowan-lim.png"),
     href: "https://rowanscreative.com",
     frameClass: "bg-black/50",
     imageClass:
@@ -111,7 +113,7 @@ export const trustedLogos = [
   },
   {
     name: "Umbulizer",
-    src: "/logos/umbulizer.jpg",
+    src: publicAsset("logos/umbulizer.jpg"),
     href: "https://umbulizer-website.vercel.app",
     frameClass: "bg-white",
     imageClass: "h-[78%] w-auto max-w-[92%] object-contain",
@@ -119,7 +121,7 @@ export const trustedLogos = [
   },
   {
     name: "CleanHouse NJ",
-    src: "/logos/clean-house-nj.png",
+    src: publicAsset("logos/clean-house-nj.png"),
     href: "https://cleanhousenj.com",
     frameClass: "bg-white/[0.97]",
     imageClass:
