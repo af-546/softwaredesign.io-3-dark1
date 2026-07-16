@@ -3,7 +3,7 @@ import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 
 export function TechStack() {
   return (
-    <section className="section-padding py-20 md:py-24">
+    <section className="section-padding section-spacing">
       <Reveal className="section-container text-center mb-10">
         <p className="eyebrow mb-4">Tools we ship with</p>
         <p className="text-ink-soft text-sm max-w-lg mx-auto">

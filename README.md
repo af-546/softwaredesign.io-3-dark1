@@ -1,6 +1,6 @@
 # SoftwareDesign.io
 
-Marketing site for SoftwareDesign.io — React, TypeScript, Vite, and Tailwind CSS.
+Marketing site for SoftwareDesign.io. React, TypeScript, Vite, and Tailwind CSS.
 
 ## Setup
 

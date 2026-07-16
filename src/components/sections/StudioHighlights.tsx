@@ -5,7 +5,7 @@ export function StudioHighlights() {
   const highlights = principles.slice(0, 3);
 
   return (
-    <section className="section-padding py-20 md:py-24">
+    <section className="section-padding section-spacing">
       <Reveal className="section-container mb-12">
         <p className="eyebrow mb-4">How we operate</p>
         <h2 className="heading-lg">A studio built to ship</h2>

@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[88vh] flex items-center section-padding pt-32 pb-16 overflow-hidden">
+    <section className="hero-section relative min-h-[88svh] flex items-center section-padding pt-28 pb-12 overflow-x-hidden">
       <div className="section-container w-full grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <div>
           <Reveal>
@@ -18,7 +18,7 @@ export function Hero() {
           <Reveal delay={0.1}>
             <p className="text-lg text-ink-soft max-w-lg mb-10 leading-relaxed">
               Strategy, design, and engineering for ambitious SMBs and SaaS teams.
-              Weekly demos, real research, and production-ready work from day one.
+              From Figma to production React, we design and build software that ships.
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="md:hidden max-w-sm mx-auto mockup-shell p-1.5">
+        <Reveal delay={0.1} className="md:hidden max-w-sm mx-auto mockup-shell p-1.5 gpu-layer">
           <LaptopMockup />
         </Reveal>
       </div>

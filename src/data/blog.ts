@@ -12,20 +12,20 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "why-weekly-demos-change-everything",
-    title: "Why weekly demos change everything",
+    slug: "why-transparent-builds-change-everything",
+    title: "Why transparent builds change everything",
     excerpt:
-      "The biggest risk in design projects isn't bad design. It's surprise at handoff. Weekly demos eliminate that.",
+      "The biggest risk in software projects isn't bad code. It's surprise at handoff. Incremental delivery eliminates that.",
     category: "Process",
     date: "2025-11-12",
     readTime: "6 min",
     author: "SoftwareDesign Team",
-    tags: ["process", "collaboration", "demos"],
+    tags: ["process", "collaboration", "engineering"],
     content: [
-      "Most design agencies operate on a waterfall model disguised as agile. You get a kickoff deck, then silence for three weeks, then a big reveal.",
-      "We ship work every Friday. Not polished presentations, but actual working prototypes or production code. Your team sees progress as it happens and can redirect early.",
+      "Most agencies operate on a waterfall model disguised as agile. You get a kickoff deck, then silence for three weeks, then a big reveal.",
+      "We ship working prototypes and production PRs throughout the engagement. Your team sees progress in staging, reviews real code, and can redirect early.",
       "The result: fewer change orders, faster timelines, and stakeholders who actually understand what they're getting before launch day.",
-      "If your current agency can't show you something tangible every week, that's a red flag worth paying attention to.",
+      "If your current partner can't show you something tangible every sprint, that's a red flag worth paying attention to.",
     ],
   },
   {

@@ -65,7 +65,7 @@ export const services: Service[] = [
         number: "03",
         title: "Build",
         description:
-          "Two to three weeks of production code. Weekly demo calls. You see progress as it happens.",
+          "Two to three weeks of production code. Staging deploys and reviewable PRs so you track progress in real time.",
       },
       {
         number: "04",
@@ -139,7 +139,7 @@ export const services: Service[] = [
       {
         number: "02",
         title: "Design",
-        description: "Wireframes to high-fidelity. Weekly demos with your product and engineering leads.",
+        description: "Wireframes to high-fidelity. Shared Figma and async walkthroughs with your product and engineering leads.",
       },
       {
         number: "03",
@@ -281,7 +281,7 @@ export const services: Service[] = [
       {
         number: "03",
         title: "Design",
-        description: "Concepts to high-fidelity. Weekly demos throughout.",
+        description: "Concepts to high-fidelity. Shared prototypes and async reviews throughout.",
       },
       {
         number: "04",

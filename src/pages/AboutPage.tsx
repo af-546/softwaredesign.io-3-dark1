@@ -21,8 +21,8 @@ export function AboutPage() {
               delivered decks instead of products.
             </p>
             <p className="text-ink-soft leading-relaxed mt-5 max-w-2xl">
-              We are a small studio focused on craft, clarity, and weekly progress. Most clients
-              are remote. Boston is our home base at {site.address.street}, {site.address.city}.
+              We are a small studio focused on craft, clarity, and production-ready output. Most
+              clients are remote. Boston is our home base at {site.address.street}, {site.address.city}.
             </p>
           </Reveal>
 
@@ -85,7 +85,8 @@ export function AboutPage() {
           <p className="eyebrow mb-4">How we work</p>
           <h2 className="heading-lg mb-4">Process that keeps you in the loop</h2>
           <p className="text-ink-soft max-w-2xl leading-relaxed">
-            Five phases with weekly updates and real users in the loop before build starts.
+            Five phases from discovery to deploy, with real users in the loop before engineering
+            commits.
           </p>
         </Reveal>
 

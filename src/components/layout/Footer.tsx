@@ -7,8 +7,12 @@ import { useScrollToTopOnClick } from "@/hooks/useScrollToTopOnClick";
 export function Footer() {
   const scrollToTopOnClick = useScrollToTopOnClick();
   return (
-    <footer className="relative border-t border-white/5 mt-24 bg-abyss/50">
-      <div className="section-padding py-16">
+    <footer className="relative mt-12 bg-abyss/50">
+      <div
+        className="pointer-events-none absolute inset-x-0 -top-20 h-20 bg-gradient-to-b from-transparent via-void/40 to-abyss/50"
+        aria-hidden
+      />
+      <div className="section-padding py-14">
         <div className="section-container grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="lg:col-span-1">
             <Link

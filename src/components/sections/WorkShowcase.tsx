@@ -8,7 +8,7 @@ export function WorkShowcase() {
   const { setLightboxImage } = useApp();
 
   return (
-    <section className="section-padding py-20 md:py-28">
+    <section className="section-padding section-spacing">
       <Reveal className="section-container flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
         <div>
           <p className="eyebrow mb-4">Selected work</p>

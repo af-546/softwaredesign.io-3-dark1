@@ -3,7 +3,7 @@ import { Marquee } from "@/components/ui/Marquee";
 
 export function CapabilitiesMarquee() {
   return (
-    <section className="py-8 border-b border-white/5 overflow-hidden">
+    <section className="py-6 border-b border-white/5 overflow-hidden">
       <Marquee speed={30}>
         <div className="flex gap-8 px-4">
           {capabilities.map((cap) => (

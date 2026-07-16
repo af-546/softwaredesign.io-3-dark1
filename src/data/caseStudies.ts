@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Custom marketing site for Umbulizer, designed and built for production launch.",
     challenge:
-      "Umbulizer had outgrown their old site. They needed a credible product story for UMV-001, FDA authorization messaging, and clear paths to demo requests - without burying visitors in technical detail or building pages for features that were not ready to ship.",
+      "Umbulizer had outgrown their old site. They needed a credible product story for UMV-001, FDA authorization messaging, and clear paths to demo requests, without burying visitors in technical detail or building pages for features that were not ready to ship.",
     approach:
       "We mapped the buyer journey for clinical and procurement audiences, then designed and built a custom React site. Positioning, page structure, and UI shipped together. When scope drifted toward unvalidated features, we pushed back and kept the launch focused on what mattered for conversion.",
     results: [

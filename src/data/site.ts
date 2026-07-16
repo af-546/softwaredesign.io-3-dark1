@@ -4,15 +4,15 @@ export const site = {
   name: "SoftwareDesign.io",
   tagline: "Software design that ships.",
   description:
-    "Strategy, design, and engineering for ambitious SMBs and SaaS teams. Boston-based design studio.",
+    "Design and engineering studio for ambitious SMBs and SaaS teams. We ship production web apps, design systems, and custom software from Boston.",
   email: "contact@softwaredesign.io",
   address: {
     street: "867 Boylston St, Floor 5",
     city: "Boston, MA 02116",
   },
   hours: {
-    label: "Monday - Friday",
-    time: "9:00 AM - 6:00 PM ET",
+    label: "Monday to Friday",
+    time: "9:00 AM to 6:00 PM ET",
   },
   mapsUrl: "https://maps.google.com/?q=867+Boylston+St+Boston+MA+02116",
 };
@@ -26,7 +26,7 @@ export const faqs = [
   {
     question: "Do you work with clients outside Boston?",
     answer:
-      "Most of our clients are remote. Boston is our home base but we work with teams across the US and internationally. Regular demos over Zoom, async updates in between.",
+      "Most of our clients are remote. Boston is our home base but we work with teams across the US and internationally. Async Loom walkthroughs, shared Figma, and milestone reviews keep everyone aligned.",
   },
   {
     question: "What is your payment structure?",
@@ -75,9 +75,9 @@ export const principles = [
       "We take fewer projects than we could and put more time into each. The math works out better for everyone.",
   },
   {
-    title: "Weekly demos",
+    title: "Ship in increments",
     description:
-      "Every Friday you see what we built that week using the work as it happens. No big reveals at the end of phases.",
+      "Working prototypes and production PRs throughout the project. You review real output, not slide decks at phase gates.",
   },
   {
     title: "Real research, every time",
@@ -145,7 +145,7 @@ export const processSteps = [
   },
   {
     title: "Build",
-    description: "Production code with weekly demos. You see progress live.",
+    description: "Production code in your repo. Staging deploys, reviewable PRs, and paired sessions with your team.",
   },
   {
     title: "Launch",

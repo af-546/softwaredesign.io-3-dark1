@@ -4,8 +4,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function BlogPreview() {
   return (
-    <section className="section-padding py-24">
-      <Reveal className="flex justify-between items-end mb-12">
+    <section className="section-padding section-spacing">
+      <Reveal className="section-container flex justify-between items-end mb-12">
         <div>
           <p className="eyebrow mb-4">Journal</p>
           <h2 className="heading-lg">Insights from the studio</h2>
@@ -14,7 +14,7 @@ export function BlogPreview() {
           All articles →
         </Link>
       </Reveal>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+      <div className="section-container grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {blogPosts.map((post, i) => (
           <Reveal key={post.slug} delay={i * 0.08}>
             <Link

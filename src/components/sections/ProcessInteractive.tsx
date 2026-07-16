@@ -4,12 +4,12 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ProcessInteractive() {
   return (
-    <section className="section-padding py-20 md:py-28">
+    <section className="section-padding section-spacing">
       <Reveal className="section-container">
         <p className="eyebrow mb-4">How we work</p>
         <h2 className="heading-lg mb-4">Process that keeps you in the loop</h2>
         <p className="text-ink-soft max-w-2xl mb-14 leading-relaxed">
-          Five phases with weekly updates and real users in the loop before build starts.
+          Five phases from discovery to deploy, with real users in the loop before engineering commits.
         </p>
       </Reveal>
 

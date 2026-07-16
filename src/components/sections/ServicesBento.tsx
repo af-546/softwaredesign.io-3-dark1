@@ -23,7 +23,7 @@ const mockMap: Record<string, ComponentType> = {
 
 export function ServicesBento() {
   return (
-    <section className="section-padding py-20 md:py-28 section-band">
+    <section className="section-padding section-spacing section-band">
       <Reveal className="section-container">
         <p className="eyebrow mb-4">What we do</p>
         <h2 className="heading-lg mb-4">Six services. One standard.</h2>

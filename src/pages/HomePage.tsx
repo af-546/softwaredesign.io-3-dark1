@@ -6,10 +6,8 @@ import { ServicesBento } from "@/components/sections/ServicesBento";
 import { StudioHighlights } from "@/components/sections/StudioHighlights";
 import { ProcessInteractive } from "@/components/sections/ProcessInteractive";
 import { WorkShowcase } from "@/components/sections/WorkShowcase";
-// import { BeforeAfterSection } from "@/components/sections/BeforeAfterSection";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { TechStack } from "@/components/sections/TechStack";
-// import { BlogPreview } from "@/components/sections/BlogPreview";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -25,10 +23,8 @@ export function HomePage() {
       <StudioHighlights />
       <ProcessInteractive />
       <WorkShowcase />
-      {/* <BeforeAfterSection /> */}
       <TestimonialsCarousel />
       <TechStack />
-      {/* <BlogPreview /> */}
       <FAQ />
       <ContactCTA />
     </>

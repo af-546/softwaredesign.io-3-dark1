@@ -29,7 +29,7 @@ export const pricingTiers: PricingTier[] = [
       "Everything in Launch",
       "User research & testing",
       "Design system components",
-      "Weekly demo calls",
+      "Milestone reviews & async updates",
       "Engineering handoff & QA",
       "60-day post-launch support",
     ],

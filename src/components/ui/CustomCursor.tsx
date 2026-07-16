@@ -35,7 +35,7 @@ export function CustomCursor() {
     <motion.div
       className="pointer-events-none fixed top-0 left-0 z-[9996] hidden md:block"
       animate={{ x: pos.x - 80, y: pos.y - 80 }}
-      transition={{ type: "spring", stiffness: 120, damping: 22, mass: 0.6 }}
+      transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.35 }}
     >
       <div
         className={`w-40 h-40 rounded-full blur-3xl transition-all duration-300 ${

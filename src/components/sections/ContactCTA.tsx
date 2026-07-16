@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ContactCTA() {
   return (
-    <section className="section-padding py-20 md:py-28">
+    <section className="section-padding section-spacing pb-16 md:pb-20">
       <Reveal>
         <div className="section-container glass-panel rounded-2xl p-10 sm:p-14 md:p-16 text-center relative overflow-hidden border-brand/10">
           <div className="absolute inset-0 aurora-bg opacity-40" />

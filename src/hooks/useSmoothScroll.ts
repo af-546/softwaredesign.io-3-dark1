@@ -10,7 +10,11 @@ export function useSmoothScroll() {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    if (reducedMotion) return;
+    const prefersTouch =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(max-width: 768px)").matches;
+
+    if (reducedMotion || prefersTouch) return;
 
     const lenis = new Lenis({
       duration: 1.4,

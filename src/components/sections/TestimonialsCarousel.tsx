@@ -3,7 +3,7 @@ import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 
 export function TestimonialsCarousel() {
   return (
-    <section className="section-padding py-20 md:py-24 section-band">
+    <section className="section-padding section-spacing section-band">
       <Reveal className="section-container mb-12">
         <p className="eyebrow mb-4">Client feedback</p>
         <h2 className="heading-lg">What clients say</h2>

@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function TrustedBy() {
   return (
-    <section className="section-band section-padding py-16 md:py-20">
+    <section className="section-band section-padding section-spacing-sm">
       <Reveal className="section-container">
         <p className="font-mono text-xs text-ink-muted uppercase tracking-wider text-center mb-3">
           Trusted by
