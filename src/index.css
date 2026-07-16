@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   FOUNDATION
+   ======================================== */
+:root {
+  color-scheme: light;
+  --header-height: 72px;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis controls scroll */
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 bg-bg-primary text-ink-primary font-sans text-body min-h-screen overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  h1.font-serif,
+  h2.font-serif,
+  h3.font-serif,
+  h4.font-serif,
+  h5.font-serif,
+  h6.font-serif,
+  .font-serif > h1,
+  .font-serif > h2,
+  .font-serif > h3,
+  .font-serif > h4,
+  .font-serif > h5,
+  .font-serif > h6 {
+    font-weight: 600;
+  }
+
+  h1:not(.font-serif),
+  h2:not(.font-serif),
+  h3:not(.font-serif),
+  h4:not(.font-serif),
+  h5:not(.font-serif),
+  h6:not(.font-serif) {
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-mono-sm font-medium uppercase tracking-[0.08em] text-ink-tertiary;
+  }
+
+  .serif-italic {
+    @apply font-serif italic;
+  }
+
+  .grain {
+    @apply relative;
+  }
+
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  .mesh-bg {
+    background-image:
+      radial-gradient(at 20% 20%, rgba(15, 98, 254, 0.06) 0px, transparent 50%),
+      radial-gradient(at 80% 30%, rgba(15, 98, 254, 0.04) 0px, transparent 50%),
+      radial-gradient(at 50% 80%, rgba(15, 98, 254, 0.03) 0px, transparent 50%);
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-4;
+    transition: opacity 600ms cubic-bezier(0.32, 0.72, 0, 1),
+      transform 600ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .reveal.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-full whitespace-nowrap select-none;
+    transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white px-7 py-3.5 text-body;
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent-hover;
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.25);
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-ink-primary border border-border px-7 py-3.5 text-body;
+  }
+
+  .btn-secondary:hover {
+    @apply border-ink-primary bg-ink-primary text-bg-primary;
+  }
+
+  .btn-text {
+    @apply text-accent font-medium inline-flex items-center gap-1.5;
+    transition: gap 200ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .btn-text:hover {
+    @apply gap-2.5;
+  }
+
+  .card {
+    @apply bg-bg-tertiary border border-border-subtle rounded-2xl;
+    transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-0.5 border-border;
+    box-shadow: 0 8px 24px -8px rgba(10, 10, 10, 0.08);
+  }
+
+  .shimmer-line {
+    position: relative;
+    background: linear-gradient(
+      90deg,
+      rgba(15, 98, 254, 0.2) 0%,
+      rgba(15, 98, 254, 0.5) 50%,
+      rgba(15, 98, 254, 0.2) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
+  .form-input {
+    @apply w-full bg-bg-tertiary border border-border rounded-lg px-4 py-3 text-body text-ink-primary;
+    transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+  }
+
+  .form-input:hover {
+    @apply border-border-strong;
+  }
+
+  .form-input:focus {
+    @apply border-accent;
+    box-shadow: 0 0 0 3px rgba(15, 98, 254, 0.12);
+  }
+
+  .form-input::placeholder {
+    @apply text-ink-muted;
+  }
+
+  .form-input.error {
+    @apply border-semantic-danger;
+  }
+
+  .form-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  }
+
+  .form-label {
+    @apply block text-body-sm font-medium text-ink-primary mb-2;
+  }
+
+  .form-error {
+    @apply text-mono-sm text-semantic-danger mt-1.5;
+  }
+
+  .accordion-item {
+    @apply border-b border-border-subtle;
+  }
+
+  .accordion-trigger {
+    @apply w-full flex items-center justify-between gap-4 py-6 text-left text-body-lg font-medium text-ink-primary;
+    transition: color 150ms ease-out;
+  }
+
+  .accordion-icon {
+    @apply flex-shrink-0 w-6 h-6;
+    transition: transform 250ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .accordion-item[data-open="true"] .accordion-icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion-content {
+    @apply overflow-hidden max-h-0;
+    transition: max-height 350ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .accordion-item[data-open="true"] .accordion-content {
+    max-height: 400px;
+  }
+
+  .accordion-body {
+    @apply pb-6 text-ink-secondary leading-relaxed max-w-reading;
+  }
+
+  .nav-link {
+    @apply text-[0.9375rem] font-medium text-ink-secondary relative;
+    transition: color 150ms ease-out;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-ink-primary;
+  }
+
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    @apply bg-accent rounded-sm;
+  }
+
+  .skip-link {
+    @apply absolute -top-[100px] left-4 bg-ink-primary text-bg-primary px-5 py-3 rounded-lg z-[1000];
+    transition: top 200ms ease-out;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+}
+
+/* ========================================
+   LEAFLET MAP STYLING
+   ======================================== */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  @apply bg-bg-secondary font-sans;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.85) !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-lg;
+  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);
+}
+
+.leaflet-popup-content {
+  @apply text-body-sm text-ink-primary;
+  margin: 10px 14px;
+}
+
+/* ========================================
+   PREFERS-REDUCED-MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 10, 10, 0.16);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 10, 10, 0.32);
+}
